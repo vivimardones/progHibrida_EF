@@ -1,0 +1,39 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Agregar Nueva Publicación</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <form #form="ngForm" (ngSubmit)="onAgregarPublicacion(form)">
+      <ion-item>
+        <ion-label position="floating">Titulo</ion-label>
+        <ion-input [(ngModel)]="nuevaPublicacion.titulo" name="titulo" #titulo="ngModel" required minlength="5">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-input [(ngModel)]="nuevaPublicacion.descripcion" name="descripcion" #descripcion="ngModel" required
+          minlength="2">
+        </ion-input>
+      </ion-item>
+      <!-- Mostrar la fecha actual -->
+      <ion-item>
+        <ion-label>Fecha</ion-label>
+        <ion-text>{{ fecha | date: 'short' }}</ion-text>
+      </ion-item>
+      <!-- Botón de la cámara -->
+      <ion-item>
+        <ion-label>Foto</ion-label>
+        <ion-button (click)="takePicture()">Tomar Foto</ion-button>
+      </ion-item>
+      <!-- Mostrar la foto si está disponible -->
+      <ion-item>
+        <ion-label>Foto</ion-label>
+        <ion-input type="text" [(ngModel)]="nuevaPublicacion.foto" name="foto"></ion-input>
+      </ion-item>
+      <ion-button expand="full" type="submit" [disabled]="!form.valid">Agregar Publicación</ion-button>
+      <ion-text color="danger" [hidden]="titulo.valid || descripcion.pristine">
+        El Titulo debe tener minimo dos caracteres
+      </ion-text>
+    </form>
+  </ion-card-content>
+</ion-card>

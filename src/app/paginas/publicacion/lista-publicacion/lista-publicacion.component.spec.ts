@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { PublicacionComponent } from './publicacion.component';
+import { ListaPublicacionComponent } from './lista-publicacion.component';
 
-describe('PublicacionComponent', () => {
-  let component: PublicacionComponent;
-  let fixture: ComponentFixture<PublicacionComponent>;
+describe('ListaPublicacionComponent', () => {
+  let component: ListaPublicacionComponent;
+  let fixture: ComponentFixture<ListaPublicacionComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [PublicacionComponent],
+      imports: [ListaPublicacionComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PublicacionComponent);
+    fixture = TestBed.createComponent(ListaPublicacionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
