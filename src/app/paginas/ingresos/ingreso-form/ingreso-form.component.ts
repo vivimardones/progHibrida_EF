@@ -31,7 +31,7 @@ export class IngresoFormComponent {
     this.fecha = this.publicacionService.obtenerFechaActual();
   }
 
-  takePicture() {
+  agregarFoto() {
     // Código para capturar la foto usando el plugin de cámara
   }
   async onAgregarPublicacion(form: NgForm) {

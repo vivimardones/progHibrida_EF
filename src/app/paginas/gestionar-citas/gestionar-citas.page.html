@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Citas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <app-formulario-cita (agregarCita)="agregarCita($event)"></app-formulario-cita>
+  <app-lista-citas [citas]="citas" (borrarCita)="borrarCita($event)"></app-lista-citas>
+</ion-content>

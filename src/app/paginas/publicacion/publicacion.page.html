@@ -1,9 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>publicacion</ion-title>
+    <ion-title>Publicaciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <app-lista-publicacion [publicaciones]="publicaciones" (borrarPublicacion)="borrarPublicacion($event)"></app-lista-publicacion>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/ingresos']">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
