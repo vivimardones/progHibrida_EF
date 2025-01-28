@@ -9,7 +9,7 @@
       </ion-item>
       <ion-item>
         <ion-button expand="full" (click)="agregarFoto()">
-          <ion-icon slot="start" name="camera"></ion-icon>
+          <ion-icon slot="start" name="foto"></ion-icon>
           FOTOGRAFÍA
         </ion-button>
         <img *ngIf="nuevaPublicacion.foto" [src]="nuevaPublicacion.foto" />
@@ -17,12 +17,18 @@
       <ion-item>
         <ion-label position="stacked">Descripción</ion-label>
         <ion-input [(ngModel)]="nuevaPublicacion.descripcion" name="descripcion" #descripcion="ngModel" required
-          minlength="2" placeholder="Perrito salchicha perdido en esquina Manuel Montt con los Olivos ....">
+          minlength="20" placeholder="Perrito salchicha perdido en esquina Manuel Montt con los Olivos ....">
         </ion-input>
       </ion-item>
       <ion-text hidden>{{ fecha | date: 'short' }}</ion-text>
-
       <ion-button expand="full" type="submit" [disabled]="!form.valid">Guardar</ion-button>
+      <ion-text color="danger" [hidden]="titulo.valid || titulo.pristine">
+        * El titulo debe tener minimo cinco caracteres
+      </ion-text>
+      <br>
+      <ion-text color="danger" [hidden]="descripcion.valid || descripcion.pristine">
+        * La descripción debe tener un largo minimo 20 caracteres
+      </ion-text>
     </form>
   </ion-card-content>
 </ion-card>
